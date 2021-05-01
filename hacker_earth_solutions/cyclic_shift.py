@@ -5,8 +5,8 @@ this string.
 
 You performed the shift infinite number of times and each time
 you recorded the value of the binary number represented by the
-string. The maximum binary number B formed after performing (possibly 0)
-the operation is . Your task is to determine the number of cyclic
+string. The maximum binary number formed after performing (possibly 0)
+the operation is B. Your task is to determine the number of cyclic
 shifts that can be performed such that the value represented by
 the string A will be equal to B for the Kth time.
 
