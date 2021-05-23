@@ -1,3 +1,40 @@
+'''
+Let us define a function F(x)=sum(Ai & x)
+
+Here & represents BIT WISE AND operator.
+
+He needs to find the number of different values
+of x  for which F(x) is maximized.
+
+But there is a constraint for x that it must have exactly
+l bits-set in its binary representation.
+
+Your task is to find number of such values for which this
+function is maximised.
+
+Print the required number.
+
+If there are infinite  such numbers output -1.
+
+Sample Input
+2
+5 2
+3 5 7 1 4
+5 1
+3 5 7 1 4
+
+Sample Output
+2
+1
+
+Explanation
+For the first test case both 5 and 6 can serve the
+purpose while in second test case only 4 satisfies the constraints.
+
+
+'''
+
+
 import math
 
 for i in range(int(input())):
