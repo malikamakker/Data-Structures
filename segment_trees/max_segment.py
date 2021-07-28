@@ -27,7 +27,34 @@ def construct_segment_tree(array, start, end, node, n):
 
     return tree[node]
 
-array = [i for i in range(10)]
+
+def find_segment(pos, node):
+    if node <len(tree) and tree[node]:
+        s = tree[node][1]
+        e = tree[node][2]
+        maxx = tree[node][0]
+        num = array[pos]
+
+        if maxx <= num:
+            return tree[node]
+
+        left = find_segment(pos, 2 * node + 1)
+        right = find_segment(pos, 2 * node + 2)
+
+        if left and right:
+            if (left[2] + 1) == right[1]:
+                return (left[0], left[1], right[2])
+            elif pos < left[1] and pos < left[2]:
+                return left
+            elif pos > right[1] and pos > right[2]:
+                return right
+        if left:
+            return left
+        if right:
+            return right
+    return None
+
+array = [10,2,3,2,12]
 n = len(array)
 
 height = math.log(n, 2)
@@ -48,3 +75,4 @@ for i in range(height+1):
         print(tree[index]),
         index += 1
     print("")
+print(find_segment(2, 0))
