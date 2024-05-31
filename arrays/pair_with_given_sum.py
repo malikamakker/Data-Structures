@@ -11,3 +11,25 @@ Input: arr[] = {1, -2, 1, 0, 5}, x = 0
 Output: No
 
 """
+
+def pair_with_given_sum(arr, sum):
+    previous_elements = set()
+    for x in arr:
+        if sum - x in previous_elements:
+            return True
+        previous_elements.add(x)
+    return False
+
+arr = [0, -1, 2, -3, 1]
+sum = -2
+if pair_with_given_sum(arr, sum):
+    print("Yes")
+else:
+    print("No")
+
+arr = [1, -2, 1, 0, 5]
+sum = 0
+if pair_with_given_sum(arr, sum):
+    print("Yes")
+else:
+    print("No")
